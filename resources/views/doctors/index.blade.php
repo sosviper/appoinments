@@ -29,6 +29,7 @@
               <th scope="col">Nombre</th>
               <th scope="col">Email</th>
               <th scope="col">DNI</th>
+              <th scope="col">Opciones</th>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +59,9 @@
           
           </tbody>
         </table>
+      </div>
+      <div class="card-body">
+        {{ $doctors->links() }}
       </div>
     </div>
 @endsection
