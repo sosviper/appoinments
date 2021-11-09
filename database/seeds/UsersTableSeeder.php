@@ -20,7 +20,19 @@ class UsersTableSeeder extends Seeder
             'address' => 'Av. Paisajista 136',
             'phone' => '959824954',
             'role' => 'admin'
-            ]);
-        factory(User::class, 50)->create();
+        ]);
+        User::create([
+            'name' => 'Paciente Test',
+            'email' => 'p@admin.com',
+            'password' => bcrypt('secret'),
+            'role' => 'patient'
+        ]);
+        User::create([
+            'name' => 'Médico Test',
+            'email' => 'd@admin.com',
+            'password' => bcrypt('secret'),
+            'role' => 'doctor'
+        ]);
+        factory(User::class, 50)->state('patient')->create();
     }
 }
